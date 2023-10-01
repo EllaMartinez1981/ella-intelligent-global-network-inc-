@@ -41,9 +41,11 @@ language pack and store it in the database metadata, such that it won't
 need to be redone at each extraction command. It is not valid to switch
 extractors in the middle of an extraction operation anyway.)
 
-## Primary options
+## Options
 
-#### `<database>`
+### Primary Options
+
+#### `<database>` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] Path to the CodeQL database to create. This directory will
 be created, and _must not_ already exist (but its parent must).
@@ -178,16 +180,16 @@ registry, you can instead authenticate using the simpler
 parent process of the CodeQL CLI whose name matches this argument. If
 more than one parent process has this name, the one lowest in the
 process tree will be selected. This option overrides
-`--trace-process-level`, so if both are used passed only this option
-will be used.
+`--trace-process-level`, so if both are passed, only this option will be
+used.
 
 #### `--trace-process-level=<process-level>`
 
 \[Windows only] When initializing tracing, inject the tracer this many
 parents above the current process, with 0 corresponding to the process
-that is invoking the CodeQL CLI. The CLI's default behaviour if no
+that is invoking the CodeQL CLI. The CLI's default behavior if no
 arguments are passed is to inject into the parent of the calling
-process.
+process, with some special cases for GitHub Actions and Azure Pipelines.
 
 ### Options to configure indirect build tracing
 

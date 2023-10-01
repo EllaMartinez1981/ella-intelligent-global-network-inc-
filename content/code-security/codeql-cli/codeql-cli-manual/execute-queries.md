@@ -35,9 +35,11 @@ codeql execute queries [--output=<dir|file.bqrs>] [--threads=<num>] <options>...
 This command should not normally be invoked directly. Instead use either
 [codeql database run-queries](/code-security/codeql-cli/codeql-cli-manual/database-run-queries) or [codeql query run](/code-security/codeql-cli/codeql-cli-manual/query-run), which will start [codeql execute queries](/code-security/codeql-cli/codeql-cli-manual/execute-queries) with specific JVM options to tune the performance of the QL evaluator.
 
-## Primary options
+## Options
 
-#### `<dataset>`
+### Primary Options
+
+#### `<dataset>` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] Path to the raw QL dataset to query.
 
@@ -159,7 +161,7 @@ below this percentage.
 
 #### `--external=<pred>=<file.csv>`
 
-A CSV file that contains rows for external predicate `<pred>`.
+A CSV file that contains rows for external predicate _\<pred>_.
 Multiple `--external` options can be supplied.
 
 #### `--xterm-progress=<mode>`

@@ -34,9 +34,11 @@ codeql resolve qlref <options>... -- <qlref>
 
 Accepts a .qlref file and returns the .ql file that it points to.
 
-## Primary options
+## Options
 
-#### `<qlref>`
+### Primary Options
+
+#### `<qlref>` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] .qlref file to dereference.
 

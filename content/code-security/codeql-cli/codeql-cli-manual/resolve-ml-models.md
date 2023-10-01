@@ -41,9 +41,11 @@ command line arguments.
 
 This command is deprecated. Use [codeql resolve extensions](/code-security/codeql-cli/codeql-cli-manual/resolve-extensions) instead.
 
-## Primary options
+## Options
 
-#### `<querysuite|pack>...`
+### Primary Options
+
+#### `<querysuite|pack>...` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] Queries to execute. Each argument is in the form
 `scope/name@range:path` where:

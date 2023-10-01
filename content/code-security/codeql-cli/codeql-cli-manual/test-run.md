@@ -32,9 +32,11 @@ codeql test run [--threads=<num>] [--ram=<MB>] <options>... -- <test|dir>...
 
 Run unit tests for QL queries.
 
-## Primary options
+## Options
 
-#### `<test|dir>...`
+### Primary Options
+
+#### `<test|dir>...` <!-- markdownlint-disable-line heading-increment -->
 
 Each argument is one of:
 

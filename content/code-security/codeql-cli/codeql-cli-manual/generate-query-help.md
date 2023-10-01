@@ -32,9 +32,11 @@ codeql generate query-help --format=<format> [--output=<dir|file>] <options>... 
 
 Generate end-user query help from .qhelp files.
 
-## Primary options
+## Options
 
-#### `<qhelpdir|suite>...`
+### Primary Options
+
+#### `<qhelpdir|suite>...` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] Query help files to render. Each argument is one of:
 

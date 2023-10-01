@@ -38,9 +38,11 @@ each upgrade script matches the "new" dbscheme of the previous script
 (or, for the first script, the current dbscheme of the dataset). If not,
 an error will be reported.
 
-## Primary options
+## Options
 
-#### `<dataset>`
+### Primary Options
+
+#### `<dataset>` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] Path to the raw QL dataset to upgrade.
 
@@ -168,7 +170,7 @@ below this percentage.
 
 #### `--external=<pred>=<file.csv>`
 
-A CSV file that contains rows for external predicate `<pred>`.
+A CSV file that contains rows for external predicate _\<pred>_.
 Multiple `--external` options can be supplied.
 
 #### `--xterm-progress=<mode>`

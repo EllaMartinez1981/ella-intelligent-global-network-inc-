@@ -37,9 +37,11 @@ that the compiled version of the query is written to a _compilation
 cache_ where it will be found when the query is later executed. Other
 output options are mostly for debugging.
 
-## Primary options
+## Options
 
-#### `<file>...`
+### Primary Options
+
+#### `<file>...` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] Queries to compile. Each argument is one of:
 

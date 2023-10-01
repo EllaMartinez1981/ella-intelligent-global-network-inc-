@@ -42,9 +42,11 @@ default.
 
 Available since `v2.6.0`.
 
-## Primary options
+## Options
 
-#### `<scope/name[@version]|suite.qls>...`
+### Primary Options
+
+#### `<scope/name[@version]|suite.qls>...` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] List of CodeQL packs and query suites to download. If a
 query suite is provided, its instructions will be inspected and all

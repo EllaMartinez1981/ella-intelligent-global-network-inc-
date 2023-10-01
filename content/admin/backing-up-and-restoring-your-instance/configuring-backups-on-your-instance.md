@@ -58,9 +58,9 @@ For more information, see [{% data variables.product.prodname_enterprise_backup_
 
 ## Installing {% data variables.product.prodname_enterprise_backup_utilities %}
 
-To install {% data variables.product.prodname_enterprise_backup_utilities %} on your backup host, we recommend cloning the project's Git repository. This approach allows you to fetch new releases directly using Git, and your existing backup configuration file, `backup.config`, will be preserved when installing a new version.
+To install {% data variables.product.prodname_enterprise_backup_utilities %} on your backup host, we recommend you download the relevant {% data variables.product.prodname_enterprise_backup_utilities %} release as a compressed archive, then extract and install the contents. For more information, see [Getting started](https://github.com/github/backup-utils/blob/master/docs/getting-started.md) in the github/backup-utils repository.
 
-Alternatively, if the host machine can't access the internet, you can download each {% data variables.product.prodname_enterprise_backup_utilities %} release as a compressed archive, then extract and install the contents. For more information, see [Getting started](https://github.com/github/backup-utils/blob/master/docs/getting-started.md) in the {% data variables.product.prodname_enterprise_backup_utilities %} project documentation.
+Downloading the release as a compressed archive ensures you are using the correct version of {% data variables.product.prodname_enterprise_backup_utilities %} for {% data variables.location.product_location %}, and that your existing backup configuration file, `backup.config`, will be preserved when installing a new version.
 
 Backup snapshots are written to the disk path set by the `GHE_DATA_DIR` data directory variable in your `backup.config` file. Snapshots need to be stored on a filesystem which supports symbolic and hard links.
 
@@ -70,19 +70,20 @@ Backup snapshots are written to the disk path set by the `GHE_DATA_DIR` data dir
 
 {% endnote %}
 
-1. To clone the [{% data variables.product.prodname_enterprise_backup_utilities %} project repository](https://github.com/github/backup-utils/) to a local directory on your backup host, run the following command.
+1. Download the relevant {% data variables.product.prodname_enterprise_backup_utilities %} release from the [Releases](https://github.com/github/backup-utils/releases) page of the github/backup-utils repository.
 
-   ```
-   git clone https://github.com/github/backup-utils.git /path/to/target/directory/backup-utils
+1. To extract the repository using tar, run the following command.
+
+   ```shell
+   tar -xzvf /path/to/github-backup-utils-vMAJOR.MINOR.PATCH.tar.gz
    ```
 
 1. To change into the local repository directory, run the following command.
 
-   ```
+   ```shell
    cd backup-utils
    ```
 
-{% data reusables.enterprise_backup_utilities.enterprise-backup-utils-update-repo %}
 1. To copy the included `backup.config-example` file to `backup.config`, run the following command.
 
    ```shell
@@ -92,13 +93,13 @@ Backup snapshots are written to the disk path set by the `GHE_DATA_DIR` data dir
 1. To customize your configuration, edit `backup.config` in a text editor.
    1. Set the `GHE_HOSTNAME` value to your primary {% data variables.product.prodname_ghe_server %} instance's hostname or IP address.
 
-     {% note %}
+      {% note %}
 
-     **Note:** If {% data variables.location.product_location %} is deployed as a cluster or in a high availability configuration using a load balancer, the `GHE_HOSTNAME` can be the load balancer hostname, as long as it allows SSH access (on port 122) to {% data variables.location.product_location %}.
+      **Note:** If {% data variables.location.product_location %} is deployed as a cluster or in a high availability configuration using a load balancer, the `GHE_HOSTNAME` can be the load balancer hostname, as long as it allows SSH access (on port 122) to {% data variables.location.product_location %}.
 
-     To ensure a recovered instance is immediately available, perform backups targeting the primary instance even in a geo-replication configuration.
+      To ensure a recovered instance is immediately available, perform backups targeting the primary instance even in a geo-replication configuration.
 
-     {% endnote %}
+      {% endnote %}
    1. Set the `GHE_DATA_DIR` value to the filesystem location where you want to store backup snapshots. We recommend choosing a location on the same filesystem as your backup host, but outside of where you cloned the Git repository in step 1.
 1. To grant your backup host access to your instance, open your primary instance's settings page at `http(s)://HOSTNAME/setup/settings` and add the backup host's SSH key to the list of authorized SSH keys. For more information, see "[AUTOTITLE](/admin/configuration/configuring-your-enterprise/accessing-the-administrative-shell-ssh#enabling-access-to-the-administrative-shell-via-ssh)."
 1. On your backup host, verify SSH connectivity with {% data variables.location.product_location %} with the `ghe-host-check` command.
@@ -129,7 +130,7 @@ You can verify the installation method for {% data variables.product.prodname_en
 {% data reusables.enterprise_backup_utilities.enterprise-backup-utils-directory %}
 1. To check if a valid working directory exists inside a Git repository, run the following command.
 
-   ```
+   ```shell
    git rev-parse --is-inside-work-tree
    ```
 
@@ -142,11 +143,11 @@ If your installation is in a Git repository, you can install the latest version 
 ### Upgrading an installation in a Git repository
 
 {% data reusables.enterprise_backup_utilities.enterprise-backup-utils-directory %}
-  {% note %}
+   {% note %}
 
-  **Note:** We recommend creating a copy of your existing `backup.config` file in a temporary location, like `$HOME/backup.config`, before upgrading {% data variables.product.prodname_enterprise_backup_utilities %}.
+   **Note:** We recommend creating a copy of your existing `backup.config` file in a temporary location, like `$HOME/backup.config`, before upgrading {% data variables.product.prodname_enterprise_backup_utilities %}.
 
-  {% endnote %}
+   {% endnote %}
 
 1. Download the latest project updates by running the `git fetch` command.
 
@@ -166,27 +167,27 @@ To use Git instead of a compressed archive for upgrades, you must back up your e
 {% data reusables.enterprise_backup_utilities.enterprise-backup-utils-directory %}
 1. To back up your existing {% data variables.product.prodname_enterprise_backup_utilities %} configuration, copy your current `backup.config` file to a safe location, such as your home directory.
 
-   ```
+   ```shell
    cp backup.config $HOME/backup.config.saved-$(date +%Y%m%d-%H%M%S)
    ```
 
 1. Change to the local directory on your backup host where you want to install the {% data variables.product.prodname_enterprise_backup_utilities %} Git repository.
 1. To clone the [project repository](https://github.com/github/backup-utils/) to the directory on your backup host, run the following command.
 
-   ```
+   ```shell
    git clone https://github.com/github/backup-utils.git
    ```
 
 1. To change into the cloned repository, run the following command.
 
-   ```
+   ```shell
    cd backup-utils
    ```
 
 {% data reusables.enterprise_backup_utilities.enterprise-backup-utils-update-repo %}
 1. To restore your backup configuration from earlier, copy your existing backup configuration file to the local repository directory. Replace the path in the command with the location of the file saved in step 2.
 
-   ```
+   ```shell
    cp PATH/TO/BACKUP/FROM/STEP/2 backup.config
    ```
 
@@ -259,7 +260,7 @@ $ ghe-restore -c 169.154.1.1
 > WARNING: All data on GitHub Enterprise appliance 169.154.1.1 (v2.9.0)
 >          will be overwritten with data from snapshot 20170329T150710.
 > Please verify that this is the correct restore host before continuing.
-> Type 'yes' to continue: <em>yes</em>
+> Type 'yes' to continue: yes
 
 > Starting restore of 169.154.1.1:122 from snapshot 20170329T150710
 # ...output truncated
@@ -276,6 +277,7 @@ On an instance in a high-availability configuration, after you restore to new di
 To remediate after the restoration completes and before starting replication, you can tear down stale UUIDs using `ghe-repl-teardown`. If you need further assistance, contact {% data variables.contact.contact_ent_support %}.
 
 {% ifversion backup-utilities-progress %}
+
 ## Monitoring backup or restoration progress
 
 During a backup or restoration operation, you can use the `ghe-backup-progress` utility on your backup host to monitor the operation's progress. The utility prints the progress of each job sequentially.

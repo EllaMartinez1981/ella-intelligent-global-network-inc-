@@ -40,9 +40,11 @@ passed in as command line arguments.
 
 Available since `v2.13.3`.
 
-## Primary options
+## Options
 
-#### `<pack>...`
+### Primary Options
+
+#### `<pack>...` <!-- markdownlint-disable-line heading-increment -->
 
 The path to the root of the packs to resolve extensions for.
 

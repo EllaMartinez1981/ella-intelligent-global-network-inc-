@@ -39,9 +39,11 @@ This plumbing command resolves the set of data extensions and
 GitHub-created machine learning models that are available to the query
 specifiers passed in as command line arguments.
 
-## Primary options
+## Options
 
-#### `<querysuite|pack>...`
+### Primary Options
+
+#### `<querysuite|pack>...` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] Queries to execute. Each argument is in the form
 `scope/name@range:path` where:

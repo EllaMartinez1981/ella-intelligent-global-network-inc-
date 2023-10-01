@@ -46,7 +46,7 @@ redirect_from:
 
 Your migration source is an organization on {% data variables.product.prodname_dotcom_the_website %}.
 
-#### `createMigrationSource` mutation
+### `createMigrationSource` mutation
 
 ```graphql
 mutation createMigrationSource($name: String!, $ownerId: ID!) {
@@ -65,7 +65,7 @@ mutation createMigrationSource($name: String!, $ownerId: ID!) {
 
 {% data reusables.enterprise-migration-tool.createMigrationSource-table-ec %}
 
-#### `createMigrationSource` response
+### `createMigrationSource` response
 
 ```json
 {
@@ -88,7 +88,7 @@ In this example, `MS_kgDaACQxYmYxOWU4Yi0wNzZmLTQ3NTMtOTdkZC1hNGUzZmYxN2U2YzA` is
 
 {% data reusables.enterprise-migration-tool.start-repository-migration-ec %}
 
-#### `startRepositoryMigration` mutation
+### `startRepositoryMigration` mutation
 
 ```graphql
 mutation startRepositoryMigration (
@@ -182,6 +182,8 @@ gh gei generate-script --github-source-org SOURCE --github-target-org DESTINATIO
 ### Reviewing the migration script
 
 {% data reusables.enterprise-migration-tool.review-migration-script %}
+
+{% data reusables.enterprise-migration-tool.skip-releases %}
 
 ## Step 5: Migrate repositories
 

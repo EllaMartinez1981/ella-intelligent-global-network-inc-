@@ -47,9 +47,11 @@ source-code alerts, you may find [codeql database analyze](/code-security/codeql
 
 To run multiple queries in parallel, see [codeql database run-queries](/code-security/codeql-cli/codeql-cli-manual/database-run-queries).
 
-## Primary options
+## Options
 
-#### `<file.ql>`
+### Primary Options
+
+#### `<file.ql>` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] QL source of the query to execute.
 
@@ -148,7 +150,7 @@ below this percentage.
 
 #### `--external=<pred>=<file.csv>`
 
-A CSV file that contains rows for external predicate `<pred>`.
+A CSV file that contains rows for external predicate _\<pred>_.
 Multiple `--external` options can be supplied.
 
 #### `--xterm-progress=<mode>`

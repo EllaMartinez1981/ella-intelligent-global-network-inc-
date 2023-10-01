@@ -40,6 +40,18 @@ Enterprise owners can set up{% ifversion pause-audit-log-stream %}, pause,{% end
 
 All streamed audit logs are sent as compressed JSON files. The filename format is in`YYYY/MM/HH/MM/<uuid>.json.gz`.
 
+{% note %}
+
+**Note**: {% data variables.product.prodname_dotcom %} uses an at-least-once delivery method. Due to certain network or system issues, some events may be duplicated.
+
+{% endnote %}
+
+{% ifversion ghes %}
+
+Enabling audit log streaming can cause a minor impact on the performance of {% data variables.location.product_location %}. For more information about increasing resources to mitigate this performance impact, see "[AUTOTITLE](/admin/monitoring-managing-and-updating-your-instance/updating-the-virtual-machine-and-physical-resources/increasing-cpu-or-memory-resources)."
+
+{% endif %}
+
 ## Setting up audit log streaming
 
 You set up the audit log stream on {% data variables.product.product_name %} by following the instructions for your provider.
@@ -99,7 +111,7 @@ For information on creating or accessing your access key ID and secret key, see 
    - Add the permissions policy you created above to allow writes to the bucket.
    - Edit the trust relationship to add the `sub` field to the validation conditions, replacing `ENTERPRISE` with the name of your enterprise.
 
-     ```
+     ```json
      "Condition": {
         "StringEquals": {
            "oidc-configuration.audit-log.githubusercontent.com:aud": "sts.amazonaws.com",

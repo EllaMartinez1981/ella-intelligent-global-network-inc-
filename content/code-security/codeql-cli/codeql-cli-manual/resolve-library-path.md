@@ -43,16 +43,14 @@ The command will also detect a language and dbscheme to compile a query
 against, as these may also depend on autodetecting the language of a QL
 query.
 
-{% note %}
+**The command is deeply internal and its behavior or existence may
+change without much notice as the QL language ecosystem evolves.**
 
-**Note:** The command is deeply internal and its behavior or existence may
-change without much notice as the QL language ecosystem evolves.
+## Options
 
-{% endnote %}
+### Primary Options
 
-## Primary options
-
-#### `--[no-]find-extractors`
+#### `--[no-]find-extractors` <!-- markdownlint-disable-line heading-increment -->
 
 \[Advanced] Include in the output a summary of `extractor` fields from
 the QL packs that the query depends on. This is used only for a few rare

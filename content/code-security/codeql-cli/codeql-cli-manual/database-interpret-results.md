@@ -38,9 +38,11 @@ such as SARIF or CSV.
 The results should have been computed and stored in a CodeQL database
 directory using [codeql database run-queries](/code-security/codeql-cli/codeql-cli-manual/database-run-queries). (Usually you'd want to do these steps together, by using [codeql database analyze](/code-security/codeql-cli/codeql-cli-manual/database-analyze)).
 
-## Primary options
+## Options
 
-#### `<database>`
+### Primary Options
+
+#### `<database>` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] Path to the CodeQL database that has been queried.
 

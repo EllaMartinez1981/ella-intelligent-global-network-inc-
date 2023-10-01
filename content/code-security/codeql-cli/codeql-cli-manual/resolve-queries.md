@@ -41,9 +41,11 @@ list of "well-known" query suite definitions found in available QL
 packs to the standard error stream, and successfully return an empty
 list of queries.
 
-## Primary options
+## Options
 
-#### `<querysuite|pack>...`
+### Primary Options
+
+#### `<querysuite|pack>...` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] Queries to execute. Each argument is in the form
 `scope/name@range:path` where:

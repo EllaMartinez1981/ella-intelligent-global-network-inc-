@@ -41,9 +41,11 @@ conflicting locations within a single search element, so it cannot
 actually be resolved. The caller may use the actual locations to format
 an error message.
 
-## Primary options
+## Options
 
-#### `--search-path=<dir>[:<dir>...]`
+### Primary Options
+
+#### `--search-path=<dir>[:<dir>...]` <!-- markdownlint-disable-line heading-increment -->
 
 A list of directories under which QL packs may be found. Each directory
 can either be a QL pack (or bundle of packs containing a

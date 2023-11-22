@@ -101,7 +101,7 @@ jobs:
 
       # Watch canary slot instances to see when all the instances are ready
       - name: Check that canary slot is ready
-        uses: actions/github-script@98814c53be79b1d30f795b907e553d8679345975
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea
         env:
           CHECK_INTERVAL: 10000
         with:

@@ -50,7 +50,7 @@ jobs:
 
       # Because we get far too much spam ;_;
       - name: Lock conversations
-        uses: actions/github-script@98814c53be79b1d30f795b907e553d8679345975
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
         with:
